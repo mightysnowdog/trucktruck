@@ -2,4 +2,14 @@ trucktruck
 ==========
 
 truckdepotsoftware
-just getting started or hello world 
+
+Functionality: Unkown
+
+Direction: Unknown
+
+Goals: Unknown
+
+
+
+
+

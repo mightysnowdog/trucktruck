@@ -1,20 +1,21 @@
 //TruckTruck application JS file. If file gets 
+TruckYard.TruckController = (function(){
 
-allowDrop: function(ev){
+var allowDrop = function(ev){
 ev.preventDefault();
 }
 
-drop:function(ev){
+var drop = function(ev){
 ev.preventDefault();
 var data=ev.dataTransfer.getData("Text");
 ev.target.appendChild(document.getElementById(data));
 }
 
-drag: function(ev){
+var drag = function(ev){
 ev.dataTransfer.setData("Text",ev.target.id);
 }
 
-addImage: function() { 
+var addImage = function() { 
   var img = document.createElement("img");
   img.src = "http://i.imgur.com/Lmtpgze.jpg"; 
   img.height = 60; 
@@ -28,3 +29,12 @@ addImage: function() {
 
   document.body.appendChild(img);
 }
+
+return{
+  addTruck: function(){
+    addImage();
+  }
+
+}
+
+})();

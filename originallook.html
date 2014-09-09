@@ -3,83 +3,46 @@
 <html>
 <!-- HI DAD!!!!!!!!!!!-->
 <head>
-<style type="text/css">
-#div1 {width:350px;height:370px;padding:10px;border:1px solid #aaaaaa;}
-#div2 {width:350px;height:370px;padding:10px;border:1px solid #aaaaaa;}
-#div3 {width:350px;height:370px;padding:10px;border:1px solid #aaaaaa;}
-#div4 {width:330px;height:60px;padding:10px;border:1px solid #aaaaaa;}
-#div5 {width:330px;height:60px;padding:10px;border:1px solid #ff8fff;}
-#div6 {width:330px;height:60px;padding:10px;border:1px solid #aaaaaa;}
-</style>
-<script>
-function allowDrop(ev)
-{
-ev.preventDefault();
-}
-
-function drag(ev)
-{
-ev.dataTransfer.setData("Text",ev.target.id);
-}
-
-function drop(ev)
-{
-ev.preventDefault();
-var data=ev.dataTransfer.getData("Text");
-ev.target.appendChild(document.getElementById(data));
-}
-</script>
-<script type="text/javascript">
-
-function drag(ev)
-{
-ev.dataTransfer.setData("Text",ev.target.id);
-}
-
-        function addimage() { 
-          var img = document.createElement("img");
-          img.src = "http://www.johnwaynebirthplace.org/images/7775-JW_kenworth_truck_model.jpg"; 
-          img.height = 50; 
-          img.width = 100;
-          
-          
-          //optionally set a css class on the image
-          var class_name = "foo";
-          img.setAttribute("class", class_name);
-          var drag_g =""drag(event)"";
-          img.setAttribute("draggable", true);
-          img.setAttribute("ondragstart", drag_g);
-
-                    
-
-          document.body.appendChild(img);
-        }
-</script>
+<link rel="stylesheet" type="text/css" href="trucks.css">
+<script src="trucks.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/webfont/1.5.3/webfont.js"></script>
 </head>
-<body>
 
+<body>
 <p>Drag the truck image into the rectangle:</p>
 <table border="0">
-<tr>
-<td>
-<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">APT</div></td>
-<td><div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">Yard</div></td>
-<td><div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)">Door
-
-<div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)">Door1</div>
-<div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)">Door2</div>
-<div id="div6" ondrop="drop(event)" ondragover="allowDrop(event)">Door3</div>
-
-</div>
-</td>
-</tr>
+  <tr>
+    <td>
+      <div id="apt-wrapper" ondrop="drop(event)" ondragover="allowDrop(event)">
+        APT
+      </div>
+    </td>
+    <td>
+      <div id="yard-wrapper" ondrop="drop(event)" ondragover="allowDrop(event)">
+        Yard
+      </div>
+    </td>
+    <td>
+      <div id="door-wrapper" ondrop="drop(event)" ondragover="allowDrop(event)">
+      Door
+      <div id="door1" ondrop="drop(event)" ondragover="allowDrop(event)">
+      Door1
+    </div>
+    <div id="door2" ondrop="drop(event)" ondragover="allowDrop(event)">
+      Door2
+    </div>
+    <div id="door3" ondrop="drop(event)" ondragover="allowDrop(event)">
+      Door3
+    </div>
+     </div>
+    </td>
+  </tr>
 </table>
-
 <br>
-<img id="drag1" src="http://www.johnwaynebirthplace.org/images/7775-JW_kenworth_truck_model.jpg" draggable="true" ondragstart="drag(event)" width="190" height="40">
-<img id="drag2" src="http://youwouldonlyslowmedown.files.wordpress.com/2012/07/tractor.jpg" draggable="true" ondragstart="drag(event)" width="190" height="40">
- <button onclick="addimage();">Click</button>
-
-
+<img id="truck1" class="truck" src="http://i.imgur.com/Lmtpgze.jpg" draggable="true" ondragstart="drag(event)" width="190" height="40">
+<img id="truck2" class="truck" src="http://i.imgur.com/U3BP5xo.jpg" draggable="true" ondragstart="drag(event)" width="190" height="40">
+<button onclick="addImage();">Click</button>
 </body>
+
 </html>

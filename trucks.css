@@ -1,0 +1,41 @@
+#apt-wrapper {
+	width:350px;
+	height:370px;
+	padding:10px;
+	border:1px solid #aaaaaa;
+}
+#yard-wrapper {
+	width:350px;
+	height:370px;
+	padding:10px;
+	border:1px solid #aaaaaa;
+}
+#door-wrapper {
+	width:350px;
+	height:370px;
+	padding:10px;
+	border:1px solid #aaaaaa;
+}
+#door1 {
+	width:330px;
+	height:60px;
+	padding:10px;
+	border:1px solid #aaaaaa;
+}
+#door2 {
+	width:330px;
+	height:60px;
+	padding:10px;
+	border:1px solid #ff8fff;
+}
+#door3 {
+	width:330px;
+	height:60px;
+	padding:10px;
+	border:1px solid #aaaaaa;
+}
+
+.truck{
+	width:150px;
+	height: 60px;
+}

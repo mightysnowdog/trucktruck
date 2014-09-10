@@ -3,24 +3,28 @@
 // found this too http://alogicalparadox.com/drag.js/
 var TruckController = (function(){
 
-var addImage = function() { 
+//Private variables
+var truckCounter = 2;
+
+//Private Functions
+var addImage = function(truckCount) { 
   var img = document.createElement("img");
+  img.setAttribute("id","truck"+truckCount);
+  img.setAttribute("class", "truck");
+  img.setAttribute("draggable", true);
+  img.setAttribute("ondragstart", "TruckController.drag(event)");
   img.src = "http://i.imgur.com/Lmtpgze.jpg"; 
   img.height = 60; 
   img.width = 150;
-  //optionally set a css class on the image
-  var class_name = "truck1";
-  img.setAttribute("class", class_name);
-  var drag_g ="TruckController.drag(event)";
-  img.setAttribute("TruckController.draggable", true);
-  img.setAttribute("TruckController.ondragstart", drag_g);
-
+  
   document.body.appendChild(img);
 }
 
+//Public API functions
 return{
   addTruck: function(){
-    addImage();
+    truckCounter++;
+    addImage(truckCounter);
   },
   allowDrop: function(ev){
     ev.preventDefault();

@@ -6,20 +6,6 @@
 
 var TruckController = (function(){
 
-var canDrop = function(ev){
-ev.preventDefault();
-}
-
-var doDrop = function(ev){
-ev.preventDefault();
-var data=ev.dataTransfer.getData("Text");
-ev.target.appendChild(document.getElementById(data));
-}
-
-var doDrag = function(ev){
-ev.dataTransfer.setData("Text",ev.target.id);
-}
-
 var addImage = function() { 
   var img = document.createElement("img");
   img.src = "http://i.imgur.com/Lmtpgze.jpg"; 
@@ -40,13 +26,15 @@ return{
     addImage();
   },
   allowDrop: function(ev){
-    canDrop(ev);
+    ev.preventDefault();
   },
   drop: function(ev){
-    doDrop(ev);
+    ev.preventDefault();
+    var data=ev.dataTransfer.getData("Text");
+    ev.target.appendChild(document.getElementById(data));
   },
   drag: function(ev){
-    doDrag(ev);
+    ev.dataTransfer.setData("Text",ev.target.id);
   }
 
 }

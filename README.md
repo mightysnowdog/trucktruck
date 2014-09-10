@@ -1,6 +1,9 @@
 trucktruck
 ==========
 
+#Dependencies
+To install bower run "npm install -g bower". If you do not have npm run through the NPM documentation online to install.
+
 truckdepotsoftware
 
 Functionality: Monitor stages of trucks unloading and loading at the warehouses

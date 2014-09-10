@@ -39,3 +39,34 @@
 	width:150px;
 	height: 60px;
 }
+* { box-sizing: border-box; }
+
+body { font-family: sans-serif; }
+
+.item {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background: #CCC;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* other items appear above handle */
+.item > * {
+  position: relative;
+}
+
+/* handle appears behind other elements
+   takes up entire size of parent */
+.item .handle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.handle:hover {
+  background: #09F;
+}

@@ -2,23 +2,21 @@
 
 //http://draggabilly.desandro.com/draggabilly.pkgd.min.js  is this what you are looking for? 
 //http://draggabilly.desandro.com/
-
 // found this too http://alogicalparadox.com/drag.js/
 
+var TruckController = (function(){
 
-TruckYard.TruckController = (function(){
-
-var allowDrop = function(ev){
+var canDrop = function(ev){
 ev.preventDefault();
 }
 
-var drop = function(ev){
+var doDrop = function(ev){
 ev.preventDefault();
 var data=ev.dataTransfer.getData("Text");
 ev.target.appendChild(document.getElementById(data));
 }
 
-var drag = function(ev){
+var doDrag = function(ev){
 ev.dataTransfer.setData("Text",ev.target.id);
 }
 
@@ -30,7 +28,7 @@ var addImage = function() {
   //optionally set a css class on the image
   var class_name = "truck";
   img.setAttribute("class", class_name);
-  var drag_g =""drag(event)"";
+  var drag_g ="'drag(event)'";
   img.setAttribute("draggable", true);
   img.setAttribute("ondragstart", drag_g);
 
@@ -40,6 +38,15 @@ var addImage = function() {
 return{
   addTruck: function(){
     addImage();
+  },
+  allowDrop: function(ev){
+    canDrop(ev);
+  },
+  drop: function(ev){
+    doDrop(ev);
+  },
+  drag: function(ev){
+    doDrag(ev);
   }
 
 }

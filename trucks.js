@@ -1,9 +1,6 @@
-//TruckTruck application JS file. If file gets 
+//TruckTruck application JS file.
 
-//http://draggabilly.desandro.com/draggabilly.pkgd.min.js  is this what you are looking for? 
-//http://draggabilly.desandro.com/
 // found this too http://alogicalparadox.com/drag.js/
-
 var TruckController = (function(){
 
 var addImage = function() { 
@@ -12,11 +9,11 @@ var addImage = function() {
   img.height = 60; 
   img.width = 150;
   //optionally set a css class on the image
-  var class_name = "truck";
+  var class_name = "truck1";
   img.setAttribute("class", class_name);
-  var drag_g ="'drag(event)'";
-  img.setAttribute("draggable", true);
-  img.setAttribute("ondragstart", drag_g);
+  var drag_g ="TruckController.drag(event)";
+  img.setAttribute("TruckController.draggable", true);
+  img.setAttribute("TruckController.ondragstart", drag_g);
 
   document.body.appendChild(img);
 }

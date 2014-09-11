@@ -2,7 +2,7 @@
 	width:150px;
 	height:370px;
 	padding:10px;
-	background-image: url(shot.png)
+	/*background-image: url('shot.png') */
 	border:1px solid #aaaaaa;
 }
 #yard-wrapper {

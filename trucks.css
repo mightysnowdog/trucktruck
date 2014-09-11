@@ -40,6 +40,14 @@
 	width:150px;
 	height: 60px;
 }
+
+h2 { 
+   position: absolute; 
+   top: 10px; 
+   left: 0; 
+   width: 100%; 
+}
+
 * { box-sizing: border-box; }
 
 body { font-family: sans-serif; }
